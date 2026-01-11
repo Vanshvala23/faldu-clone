@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Award, Shield, Droplets } from "lucide-react";
 import { Button } from "./ui/button";
+import { useNavigate } from "react-router-dom"; // <-- import useNavigate
 import heroImage from "../assets/hero-drain.jpg";
 
 export function Hero() {
+  const navigate = useNavigate(); // <-- initialize navigation
+
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image */}
@@ -60,10 +63,16 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-wrap gap-4 mb-12"
           >
-            <Button variant="hero" size="xl">
+            {/* <-- Button now navigates to /products --> */}
+            <Button
+              variant="hero"
+              size="xl"
+              onClick={() => navigate("/products")}
+            >
               Explore Products
               <ArrowRight className="w-5 h-5" />
             </Button>
+
             <Button variant="heroOutline" size="xl" className="border-white/50 text-white hover:bg-white/10">
               Download Catalogue
             </Button>
