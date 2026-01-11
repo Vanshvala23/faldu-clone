@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Gem, Factory, Award, Users } from "lucide-react";
 import { Button } from "./ui/button";
 import { Footer } from "./Footer";
+import { useNavigate } from "react-router-dom";
 
 const reasons = [
   {
@@ -33,6 +34,7 @@ const reasons = [
 ];
 
 export default function WhyFaldu() {
+    const navigate=useNavigate();
   return (
     <>
     <Header/>
