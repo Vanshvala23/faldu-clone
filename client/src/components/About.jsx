@@ -2,13 +2,17 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import falduManufactureimg from "../assets/faldu-manufacturing.jpg";
+import bathroomImg from "../assets/product-floor-drain.jpg";
+import design from "../assets/design.jpg";
+import manufacture from "../assets/product-channel-drain.jpg";
 
 export default function AboutUs() {
   return (
     <>
       <Header />
 
-      {/* HERO */}
+      {/* ================== HERO ================== */}
       <section className="bg-[#f7f7f7] py-36">
         <div className="container mx-auto px-4 max-w-5xl text-center">
           <motion.h1
@@ -28,16 +32,21 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* FULL WIDTH IMAGE */}
+      {/* ================== FULL WIDTH IMAGE WITH CAPTION ================== */}
       <section className="bg-white">
-        <img
-          src="/images/factory-1.jpg"
-          alt="Faldu Manufacturing"
-          className="w-full h-[520px] object-cover"
-        />
+        <div className="relative">
+          <img
+            src={falduManufactureimg}
+            alt="Faldu Manufacturing"
+            className="w-full h-[520px] object-cover rounded-xl"
+          />
+          <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/90 bg-black/50 px-4 py-2 rounded-md text-center text-sm md:text-base">
+            Faldu Manufacturing Facility – Precision Engineering in Action
+          </p>
+        </div>
       </section>
 
-      {/* WHAT MAKES US SPECIAL */}
+      {/* ================== WHAT MAKES US SPECIAL ================== */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-20 items-start">
@@ -87,23 +96,35 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* IMAGE GRID — STORYTELLING */}
+      {/* ================== IMAGE GRID WITH CAPTIONS ================== */}
       <section className="py-24 bg-[#fafafa]">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-10">
-          <img
-            src="/images/factory-2.jpg"
-            className="rounded-3xl object-cover h-[420px]"
-            alt="Manufacturing Process"
-          />
-          <img
-            src="/images/design-process.jpg"
-            className="rounded-3xl object-cover h-[420px]"
-            alt="Design & Engineering"
-          />
+          
+          <div className="relative">
+            <img
+              src={manufacture}
+              className="rounded-3xl object-cover h-[420px] w-full"
+              alt="Manufacturing Process"
+            />
+            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white/90 px-3 py-1 rounded-md text-center text-sm">
+              Advanced Manufacturing Process – Ensuring Quality & Precision
+            </p>
+          </div>
+
+          <div className="relative">
+            <img
+              src={design}
+              className="rounded-3xl object-cover h-[420px] w-full"
+              alt="Design & Engineering"
+            />
+            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white/90 px-3 py-1 rounded-md text-center text-sm">
+              Innovative Design & Engineering – From Concept to Reality
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* LOCATION */}
+      {/* ================== LOCATION ================== */}
       <section className="py-32 bg-white">
         <div className="container mx-auto px-4 max-w-6xl grid lg:grid-cols-2 gap-20 items-center">
           <motion.div>
@@ -123,15 +144,20 @@ export default function AboutUs() {
             </p>
           </motion.div>
 
-          <img
-            src="/images/product-detail.jpg"
-            className="rounded-3xl shadow-xl object-cover h-[420px]"
-            alt="Product Detail"
-          />
+          <div className="relative">
+            <img
+              src={bathroomImg}
+              className="rounded-3xl shadow-xl object-cover h-[420px] w-full"
+              alt="Product Detail"
+            />
+            <p className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 text-white/90 px-3 py-1 rounded-md text-center text-sm">
+              Finished Floor Drain Product – Ready for Installation
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* PHILOSOPHY */}
+      {/* ================== PHILOSOPHY ================== */}
       <section className="py-36 bg-[#111] text-white">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <motion.h2 className="text-4xl font-light mb-10 leading-relaxed">
