@@ -86,7 +86,7 @@ export default function WhyFaldu() {
             precision manufacturing, and uncompromised quality standards.
           </p>
 
-          <Button variant="hero" size="lg" onClick={() => window.location.href = '/products'}>
+          <Button variant="hero" size="lg" onClick={() => navigate("/products")}>
             Explore Our Products
           </Button>
         </motion.div>
