@@ -1,68 +1,170 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+/* Faldu Premium Design System - Industrial Luxury Aesthetic */
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Core Palette - Charcoal & Steel */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 15%;
+    
+    /* Card surfaces */
+    --card: 0 0% 99%;
+    --card-foreground: 220 15% 15%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+    
+    /* Primary - Deep Charcoal */
+    --primary: 220 15% 15%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - Cool Grey */
+    --secondary: 220 10% 95%;
+    --secondary-foreground: 220 15% 15%;
+    
+    /* Muted */
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 45%;
+    
+    /* Accent - Warm Copper */
+    --accent: 25 85% 55%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Steel tones */
+    --steel: 220 10% 75%;
+    --steel-light: 220 10% 92%;
+    --steel-dark: 220 12% 35%;
+    
+    /* Surface variants */
+    --surface-dark: 220 15% 8%;
+    --surface-dark-foreground: 0 0% 95%;
+    
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 220 10% 90%;
+    --input: 220 10% 90%;
+    --ring: 25 85% 55%;
+    
+    --radius: 0.5rem;
+    
+    /* Sidebar */
+    --sidebar-background: 220 15% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 25 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 25 85% 55%;
   }
-  a:hover {
-    color: #747bff;
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 0 0% 95%;
+    
+    --card: 220 15% 12%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 220 15% 10%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 0 0% 100%;
+    --primary-foreground: 220 15% 8%;
+    
+    --secondary: 220 15% 18%;
+    --secondary-foreground: 0 0% 95%;
+    
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 60%;
+    
+    --accent: 25 85% 55%;
+    --accent-foreground: 0 0% 100%;
+    
+    --steel: 220 10% 50%;
+    --steel-light: 220 10% 25%;
+    --steel-dark: 220 10% 70%;
+    
+    --surface-dark: 220 15% 5%;
+    --surface-dark-foreground: 0 0% 95%;
+    
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 25 85% 55%;
+    
+    --sidebar-background: 220 15% 5%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 25 85% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 25 85% 55%;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-foreground via-steel-dark to-foreground bg-clip-text text-transparent;
+  }
+  
+  .bg-gradient-steel {
+    @apply bg-gradient-to-br from-steel-light via-background to-steel-light;
+  }
+  
+  .bg-gradient-dark {
+    @apply bg-gradient-to-br from-surface-dark via-primary to-surface-dark;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }
