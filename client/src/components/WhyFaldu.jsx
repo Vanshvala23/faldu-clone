@@ -2,6 +2,7 @@ import {Header} from "./Header"
 import { motion } from "framer-motion";
 import { ShieldCheck, Gem, Factory, Award, Users } from "lucide-react";
 import { Button } from "./ui/button";
+import { Footer } from "./Footer";
 
 const reasons = [
   {
@@ -85,13 +86,14 @@ export default function WhyFaldu() {
             precision manufacturing, and uncompromised quality standards.
           </p>
 
-          <Button variant="hero" size="lg">
+          <Button variant="hero" size="lg" onClick={() => window.location.href = '/products'}>
             Explore Our Products
           </Button>
         </motion.div>
 
       </div>
     </section>
+    <Footer/>
     </>
   );
 }
